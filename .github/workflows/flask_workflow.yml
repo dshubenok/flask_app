@@ -17,9 +17,9 @@ jobs:
     - name: проверить код на pep8
       run: |
         pip3 install flake8
-        flake8 hello.py
+        python3 -m flake8 hello.py
         
     - name: проверить код на pep8
       run: |
         pip3 install pytest
-        pytest
+        python3 -m pytest

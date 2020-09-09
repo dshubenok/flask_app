@@ -15,4 +15,4 @@ jobs:
         command: touch privet1
         host: ${{ secrets.HOST }}
         user: ${{ secrets.USER }}
-        pass: ${{ secrets.PASS }}
+        key: ${{ secrets.PASS }}

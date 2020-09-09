@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: SSH remote command executer
-      uses: tarunjangra/ssh-remote-cmd@v1
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
       with:
-        command: touch privet11
         host: ${{ secrets.HOST }}
-        user: ${{ secrets.USER }}
-        key: ${{ secrets.PASS }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.KEY_SSH }}
+        script: touch URA

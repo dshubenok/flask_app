@@ -12,7 +12,7 @@ jobs:
     - name: SSH remote command executer
       uses: tarunjangra/ssh-remote-cmd@v1
       with:
-        command: touch privet
+        command: touch privet1
         host: ${{ secrets.HOST }}
         user: ${{ secrets.USER }}
         key: ${{ secrets.KEY_SSH }}

@@ -24,16 +24,12 @@ jobs:
         pip3 install pytest
         python3 -m pytest
 
-    - name: ssh pipelines
-      uses: cross-the-world/ssh-pipeline@master
-      env:
-        WELCOME: "ssh pipeline"
+    - name: SSH remote command executer
+      uses: tarunjangra/ssh-remote-cmd@v1
       with:
+        command: |
+          ls -a
+          touch privet
         host: ${{ secrets.HOST }}
         user: ${{ secrets.USER }}
-        pass: ${{ secrets.PASS }}
-        connect_timeout: 10s
-        script: |
-          ls -la  
-          echo $WELCOME 
-          mkdir tst
+        key: ${{ secrets.KEY_SSH }}

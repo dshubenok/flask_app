@@ -5,31 +5,14 @@ on:
     branches: [ master ]
 
 jobs:
-  tests:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-
-    - name: поздороваться
-      run: echo Hello, world!
-
-    - name: проверить код на pep8
-      run: |
-        pip3 install flake8
-        python3 -m flake8 hello.py
-        
-    - name: проверить код на pep8
-      run: |
-        pip3 install pytest
-        python3 -m pytest
-
     - name: SSH remote command executer
       uses: tarunjangra/ssh-remote-cmd@v1
       with:
-        command: |
-          ls -a
-          touch privet
+        command: touch privet
         host: ${{ secrets.HOST }}
         user: ${{ secrets.USER }}
         key: ${{ secrets.KEY_SSH }}

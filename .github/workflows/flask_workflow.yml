@@ -15,4 +15,5 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
         key: ${{ secrets.KEY_SSH }}
+        passphrase: ${{ secrets.PASSPHRASE }}
         script: touch URAf
